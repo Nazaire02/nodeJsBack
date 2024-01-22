@@ -3,7 +3,7 @@ import categorie from "../classes/categorie";
 import '../styles/Categorie.css'
 import CardProduct from "../components/CardProduct";
 
-function Beaute_Cosmetique(){
+function Pharmacie_garde(){
     const categories= [
         {id: 1, label: "Soin anti age, anti ride"},
         {id: 2, label: "cheveux"},
@@ -36,17 +36,17 @@ function Beaute_Cosmetique(){
 
     return(
         <div>
-        <h4>Beauté et cosmétique</h4>
-        <div className='categorie_container'>
+        <h4>Pharmacie de garde</h4>
+        {/* <div className='categorie_container'>
             <FlatList
                 list={categories}
                 renderItem={renderItem}
                 renderWhenEmpty={() => <div>No categories found</div>}
             />
         </div> 
-        <CardProduct/> 
+        <CardProduct/>  */}
         </div>  
     )
 }
 
-export default Beaute_Cosmetique
+export default Pharmacie_garde

@@ -1,14 +1,10 @@
 import './styles/App.css'
 import logoPharmacie from "./assets/logoPharmacie.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenNib, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Beaute_Cosmetique from './views/Beaute_Cosmetique';
-import CardProduct from './components/CardProduct';
 import { useState } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 function App() {
-  const [navElementActive, setNavElementActive] = useState("Beauté et cosmétique")
-
   return (
     <div className='container'>
       <div className='header'>
@@ -22,21 +18,15 @@ function App() {
       </div>
       <div className='horizontal_barre' />
       <div className='nav'>
-        <div><a href="">Beauté<br />& Cosmétiques</a></div>
-        <div className='barre_entre_menu'><a href="">Soins<br />& Bien etre</a></div>
-        <div className='barre_entre_menu'><a href="">Médicaments<br />& Traitements</a></div>
-        <div className='barre_entre_menu'><a href="">Vitamines<br />& Suppléments</a></div>
-        <div className='barre_entre_menu'><a href="">Animaux<br />& Végétaux</a></div>
-        <div className='barre_entre_menu'><a href="">Pharmacie de<br /> garde</a></div>
+        <div><Link to="Beaute/consmetique" className='nav_element'>Beauté<br />& Cosmétiques</Link></div>
+        <div className='barre_entre_menu'><Link to="soin/bien_etre" className='nav_element'>Soins<br />& Bien etre</Link></div>
+        <div className='barre_entre_menu'><Link to="medicament/traitement" className='nav_element'>Médicaments<br />& Traitements</Link></div>
+        <div className='barre_entre_menu'><Link to="vitamine/supplement" className='nav_element'>Vitamines<br />& Suppléments</Link></div>
+        <div className='barre_entre_menu'><Link to="animaux/vegetaux" className='nav_element'>Animaux<br />& Végétaux</Link></div>
+        <div className='barre_entre_menu'><Link to="pharmacie/garde" className='nav_element'>Pharmacie de<br /> garde</Link></div>
       </div>
-      <h4>{navElementActive}</h4>
       <div>
-        <div className='categorie_container'>
-          <Beaute_Cosmetique />
-        </div>
-        <div>
-          <CardProduct/>
-        </div>
+      <Outlet/>
       </div>
       <div className='footer'>
         <p>Le premier bien de l'homme c'est la santé!!!</p>
