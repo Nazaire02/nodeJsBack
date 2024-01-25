@@ -5,10 +5,13 @@
     width: 17%;
     min-width: 17%;
     height: auto;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 3px;
+    margin-right: 3px;
     padding: 1%;
     border-radius: 20px;
+    box-shadow: 2px 2px 2px #16D964;
 }
 
 .imgProduct{
@@ -38,4 +41,42 @@
 
 .commentProduct{
     color: #707070;
+}
+
+.prix{
+    color: #16D964;
+    font-weight: bolder;
+    flex-direction: end;
+}
+
+.priceContainer{
+    display: flex;
+    justify-content: end;
+}
+
+.containerCapacity{
+    border: #16D964 1px solid;
+    width: 45px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerVersoCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContainerVersoCard p{
+    margin: 0px;
+    color: #707070;
+}
+
+.ContainerVersoCard .voirPlusButton{
+    color: #16D964;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
