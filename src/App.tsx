@@ -4,6 +4,7 @@ import Beaute_Cosmetique from './views/Beaute_Cosmetique';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+
 function App() {
   return (
     <div className='container'>

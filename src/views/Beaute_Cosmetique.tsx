@@ -2,6 +2,8 @@ import FlatList from "flatlist-react"
 import categorie from "../classes/categorie";
 import '../styles/Categorie.css'
 import CardProduct from "../components/CardProduct";
+import { useState } from "react";
+import SortBar from "../components/SortBar";
 
 function Beaute_Cosmetique() {
     const categories = [
@@ -28,9 +30,23 @@ function Beaute_Cosmetique() {
         { id: 22, label: "Masques visage" },
     ]
 
+    //Pour ce tabkeau faire clé valeur pour faciliter
+    const [searchItem, setSearchItem] = useState(["beaute_cosmetique"]) 
+    
+    function addSearchItem(item: string){
+        if (searchItem.length > 1) {
+            const newSearchitem = [searchItem[0], item]
+            setSearchItem(newSearchitem)
+        }else{
+            setSearchItem(searchItem => [...searchItem, item]);
+        }
+    }
+
+    console.log(searchItem)
+
     const renderItem = (item: categorie, idx: any) => (
-        <div key={idx} className="element">
-            <a href="">{item.label}</a>
+        <div key={idx} className="element" onClick={() => addSearchItem(item.label)}>
+            <a>{item.label}</a>
         </div>
     );
 
@@ -44,6 +60,8 @@ function Beaute_Cosmetique() {
                     renderWhenEmpty={() => <div>No categories found</div>}
                 />
             </div>
+            <SortBar/>
+            <div className="searchBarConaitner"></div>
             <div className="containerCard">
                 <CardProduct />
                 <CardProduct />

@@ -1,6 +1,6 @@
 class categorie{
     "id": Number;
-    "label": String
+    "label": string
 }
 
 export default categorie;
