@@ -31,36 +31,47 @@ function Beaute_Cosmetique() {
     ]
 
     //Pour ce tabkeau faire clé valeur pour faciliter
-    const [searchItem, setSearchItem] = useState(["beaute_cosmetique"]) 
-    
-    function addSearchItem(item: string){
+    const [searchItem, setSearchItem] = useState(["beaute_cosmetique"])
+
+    //Ce state va servir à contenir l'item selectionné
+    const [itemChoose, setItemChoose] = useState<categorie | null>(null);
+
+    function addSearchItem(item: string) {
         if (searchItem.length > 1) {
             const newSearchitem = [searchItem[0], item]
             setSearchItem(newSearchitem)
-        }else{
+        } else {
             setSearchItem(searchItem => [...searchItem, item]);
         }
     }
 
-    console.log(searchItem)
+    console.log(searchItem === null)
 
     const renderItem = (item: categorie, idx: any) => (
-        <div key={idx} className="element" onClick={() => addSearchItem(item.label)}>
+        <div key={idx} className="element" onClick={() => setItemChoose(item)}>
             <a>{item.label}</a>
         </div>
     );
 
     return (
         <div>
-            <h4>Beauté et cosmétique</h4>
-            <div className='categorie_container'>
-                <FlatList
-                    list={categories}
-                    renderItem={renderItem}
-                    renderWhenEmpty={() => <div>No categories found</div>}
-                />
-            </div>
-            <SortBar/>
+            {!itemChoose && <h4>Beauté et cosmétique</h4>}
+            {itemChoose &&
+                <div className="containerLabelItemChoose">
+                    <p onClick={() => setItemChoose(null)}>Go back</p>
+                    <h4>{itemChoose?.label}</h4>
+                </div>
+            }
+            {!itemChoose &&
+                <div className='categorie_container'>
+                    <FlatList
+                        list={categories}
+                        renderItem={renderItem}
+                        renderWhenEmpty={() => <div>No categories found</div>}
+                    />
+                </div>
+            }
+            {itemChoose && <SortBar />}
             <div className="searchBarConaitner"></div>
             <div className="containerCard">
                 <CardProduct />

@@ -11,6 +11,7 @@ import Medicament_traitement from './views/Medicament_traitement.tsx';
 import Vitamine_supplement from './views/Vitamine_supplement.tsx';
 import Animaux_vegetaux from './views/Animaux_vegetaux.tsx';
 import Pharmacie_garde from './views/Pharmacie_garde.tsx';
+import DetailsProduct from './views/DetailsProduct.tsx';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         path: "animaux/vegetaux",
         element: <Animaux_vegetaux />,
       },
+      {
+        path:"details/product",
+        element: <DetailsProduct/>
+      }
     ],
   },
 ]);

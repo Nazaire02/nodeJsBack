@@ -1,6 +1,7 @@
 import { useState } from "react";
 import productImage from "../assets/mixa.png"
 import "../styles/CardProduct.css"
+import { Link } from "react-router-dom";
 function CardProduct() {
     const [isClick, setIsClick] = useState(false);
 
@@ -24,7 +25,7 @@ function CardProduct() {
                     <p>Pharmacie</p>
                     <p>Christ Stella</p>
                     <p>Attécoubé</p>
-                    <p className="voirPlusButton">Voir +</p>
+                    <p className="voirPlusButton"><Link to="/details/product">  Voir +</Link></p>
                 </div>)
             }
         </div>
