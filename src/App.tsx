@@ -11,6 +11,7 @@ import NavBar from './components/NavBar';
 import { Box, ThemeProvider } from '@mui/material';
 import { theme } from './colors';
 import NavItems from './components/NavItems';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
         <Box>
           <Outlet />
         </Box>
+        <Footer/>
       </Box>
     </ThemeProvider>
   )

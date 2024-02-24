@@ -4,6 +4,9 @@ import '../styles/Categorie.css'
 import CardProduct from "../components/CardProduct";
 import { useState } from "react";
 import SortBar from "../components/SortBar";
+import { Box, Typography } from "@mui/material";
+import MaintTitle from "../components/MainTitle";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Beaute_Cosmetique() {
     const categories = [
@@ -54,10 +57,13 @@ function Beaute_Cosmetique() {
     );
 
     return (
-        <div>
-            {!itemChoose && <h4>Beauté et cosmétique</h4>}
+        <Box sx={{ flexGrow: 1 }}>
+            {!itemChoose &&
+                <MaintTitle title="Beauté et cosmétique"/>
+            }
             {itemChoose &&
                 <div className="containerLabelItemChoose">
+                    <ArrowBackIcon />
                     <p onClick={() => setItemChoose(null)}>Go back</p>
                     <h4>{itemChoose?.label}</h4>
                 </div>
@@ -73,7 +79,7 @@ function Beaute_Cosmetique() {
             }
             {itemChoose && <SortBar />}
             <div className="searchBarConaitner"></div>
-            <div className="containerCard">
+            <Box sx={{ display:"flex", flexDirection:"row", flexWrap: "wrap", justifyContent:"center"}}>
                 <CardProduct />
                 <CardProduct />
                 <CardProduct />
@@ -84,8 +90,8 @@ function Beaute_Cosmetique() {
                 <CardProduct />
                 <CardProduct />
                 <CardProduct />
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 
