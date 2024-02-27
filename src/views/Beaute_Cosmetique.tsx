@@ -4,7 +4,7 @@ import '../styles/Categorie.css'
 import CardProduct from "../components/CardProduct";
 import { useState } from "react";
 import SortBar from "../components/SortBar";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, ButtonProps, Typography, styled } from "@mui/material";
 import MaintTitle from "../components/MainTitle";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -48,12 +48,19 @@ function Beaute_Cosmetique() {
         }
     }
 
-    console.log(searchItem === null)
+    const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
+        color: "#09a766",
+        backgroundColor: "white",
+        borderRadius:20,
+        margin:2,
+        '&:hover': {
+          backgroundColor: "#09a766",
+          color:"white"
+        },
+      }));
 
     const renderItem = (item: categorie, idx: any) => (
-        <div key={idx} className="element" onClick={() => setItemChoose(item)}>
-            <a>{item.label}</a>
-        </div>
+        <ColorButton variant="contained" onClick={()=>setItemChoose(item)}>{item.label}</ColorButton>
     );
 
     return (
@@ -78,7 +85,6 @@ function Beaute_Cosmetique() {
                 </div>
             }
             {itemChoose && <SortBar />}
-            <div className="searchBarConaitner"></div>
             <Box sx={{ display:"flex", flexDirection:"row", flexWrap: "wrap", justifyContent:"center"}}>
                 <CardProduct />
                 <CardProduct />

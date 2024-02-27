@@ -7,7 +7,7 @@ export const theme = createTheme({
       },
       text: {
         primary: '#5f6368',
-        secondary: '##707070',
+        secondary: '#707070',
       },
       action: {
         active: '#001E3C',
