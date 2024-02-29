@@ -81,7 +81,7 @@ function Beaute_Cosmetique() {
                         renderItem={renderItem}
                         renderWhenEmpty={() => <div>No categories found</div>}
                     />
-                </div>
+                </div> 
             }
             {itemChoose && <SortBar />}
             <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
