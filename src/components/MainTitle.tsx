@@ -7,7 +7,7 @@ export default function MaintTitle(props:any) {
         variant="h4"
         noWrap
         component="div"
-        sx={{ display: { xs: 'none', sm: 'block', color: "grey", textAlign: "center", fontSize: 20, fontWeight: "bold", margin: 10 } }}
+        sx={{ display: { xs: 'none', sm: 'block', color: "grey", textAlign: "center", fontSize: 20, fontWeight: "bold", margin: "1%" } }}
     >
         {props.title}
     </Typography>

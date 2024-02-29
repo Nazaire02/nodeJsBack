@@ -51,29 +51,28 @@ function Beaute_Cosmetique() {
     const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
         color: "#09a766",
         backgroundColor: "white",
-        borderRadius:20,
-        margin:2,
+        borderRadius: 20,
+        margin: 2,
         '&:hover': {
-          backgroundColor: "#09a766",
-          color:"white"
+            backgroundColor: "#09a766",
+            color: "white"
         },
-      }));
+    }));
 
     const renderItem = (item: categorie, idx: any) => (
-        <ColorButton variant="contained" onClick={()=>setItemChoose(item)}>{item.label}</ColorButton>
+        <ColorButton variant="contained" onClick={() => setItemChoose(item)}>{item.label}</ColorButton>
     );
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             {!itemChoose &&
-                <MaintTitle title="Beauté et cosmétique"/>
+                <MaintTitle title="Beauté et cosmétique" />
             }
             {itemChoose &&
-                <div className="containerLabelItemChoose">
-                    <ArrowBackIcon />
-                    <p onClick={() => setItemChoose(null)}>Go back</p>
-                    <h4>{itemChoose?.label}</h4>
-                </div>
+                <Box sx={{flexGrow:1, display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+                    <p onClick={() => setItemChoose(null)}><ArrowBackIcon /></p>
+                    <MaintTitle title={itemChoose?.label}/>          
+                </Box>
             }
             {!itemChoose &&
                 <div className='categorie_container'>
@@ -85,7 +84,7 @@ function Beaute_Cosmetique() {
                 </div>
             }
             {itemChoose && <SortBar />}
-            <Box sx={{ display:"flex", flexDirection:"row", flexWrap: "wrap", justifyContent:"center"}}>
+            <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
                 <CardProduct />
                 <CardProduct />
                 <CardProduct />
